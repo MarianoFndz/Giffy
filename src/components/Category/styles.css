@@ -1,0 +1,49 @@
+.Category-Container {
+  width: 100%;
+}
+
+.Container-Title {
+  margin-bottom: 0;
+}
+
+.Category-ul {
+  list-style: none;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.Category-li {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.Category-Link {
+  text-decoration: none;
+  font-size: 1.5rem;
+  background-color: rgba(000, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 850px) {
+  .Category-Container {
+    width: 800px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Category-Container {
+    height: 100%;
+    width: 20%;
+    align-self: stretch;
+  }
+  .Category-ul {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .Container-Title {
+    margin-top: 0;
+  }
+}

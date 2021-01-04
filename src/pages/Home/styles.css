@@ -1,0 +1,21 @@
+.Container-Results {
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  font-family: "Oswald", sans-serif;
+  width: 100%;
+}
+.Container-Gifs {
+  width: 100%;
+}
+@media screen and (min-width: 1200px) {
+  .Container-Results {
+    display: flex;
+    align-items: start;
+    flex-direction: row-reverse;
+    margin-top: 40px;
+  }
+  .Container-Gifs h3 {
+    margin-top: 0;
+  }
+}

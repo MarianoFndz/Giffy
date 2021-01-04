@@ -1,0 +1,26 @@
+.Form {
+  margin: 20px auto 0 auto;
+  width: 250px;
+}
+
+.Search {
+  width: 70%;
+  height: 35px;
+  box-sizing: border-box;
+  border-radius: 10px 0 0 10px;
+  border: none;
+  outline: none;
+  color: #000;
+  padding-left: 10px;
+  font-family: "Oswald", sans-serif;
+}
+
+.ButtonSearch {
+  width: 30%;
+  height: 35px;
+  border-radius: 0 10px 10px 0;
+  border: none;
+  background-color: #09f;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+}

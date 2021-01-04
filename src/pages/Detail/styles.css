@@ -1,0 +1,9 @@
+.Container-Detail {
+  width: 90%;
+}
+
+@media (min-width: 1000px) {
+  .Container-Detail {
+    width: 50%;
+  }
+}

@@ -1,25 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, useState } from "react";
+import "./App.css";
+import ListOfGifs from "./components/ListOfGifs";
+import { Route, Link } from "wouter";
+import Detail from "./pages/Detail";
+import SearchResults from "./pages/SearchResults";
+import StaticContext from "./context/StaticContext";
+import { GifsContextProvider } from "./context/GifsContext";
+import { TrendingTermsProvider } from "context/TrendingTermsContext";
+import SearchGifs from "components/SearchGifs";
+import { pushLocation } from "react";
+
+const HomePage = React.lazy(() => import("./pages/Home"));
 
 function App() {
+  const [keyword, setKeyword] = useState("panda");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StaticContext.Provider value={{ name: "Mariano", surname: "Fernandez" }}>
+      <div className="App">
+        <Suspense fallback={null}>
+          <Link to="/">
+            <h2 className="Logo">Giffy</h2>
+          </Link>
+          <SearchGifs />
+          <section className="App-content">
+            <GifsContextProvider>
+              <TrendingTermsProvider>
+                <Route component={HomePage} path="/" />
+              </TrendingTermsProvider>
+              <Route component={SearchResults} path="/search/:keyword" />
+              <Route component={Detail} path="/gif/:id" />
+            </GifsContextProvider>
+          </section>
+        </Suspense>
+      </div>
+    </StaticContext.Provider>
   );
 }
 
